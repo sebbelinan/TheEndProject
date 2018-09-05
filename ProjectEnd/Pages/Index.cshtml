@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<head>
+    <link href="~/css/Thenewcss.css" rel="stylesheet" />
+</head>
+
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Article number</th>
+                <th scope="col">Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.TheArticles)
+            {
+                <tr>
+                    <td>@item.ArticleName</td>
+                    <td>@item.ArticleNumber</td>
+                    <td>@item.ArticleLocation</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

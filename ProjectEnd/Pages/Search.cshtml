@@ -1,0 +1,42 @@
+﻿@page
+@model ProjectEnd.Pages.SearchModel
+@{
+    ViewData["Title"] = "Search";
+}
+<head>
+    <script src="~/js/site.js"></script>
+</head>
+
+
+<h2>Search</h2>
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Article number</th>
+                <th scope="col">Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.TheArticles.Count > 0)
+            {
+                @foreach (var item in Model.TheArticles)
+                {
+                    <tr>
+                        <td>@item.ArticleName</td>
+                        <td>@item.ArticleNumber</td>
+                        <td>@item.ArticleLocation</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td id="Error"></td>
+                </tr>
+                }
+        </tbody>
+    </table>
+    <script>NoFound();</script>
+</div>
